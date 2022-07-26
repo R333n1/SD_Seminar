@@ -3,6 +3,7 @@ page 50106 "CSD Seminar Comment Sheet"
     PageType = List;
     Caption = 'Seminar Comment Sheet';
     SourceTable = "CSD Seminar Comment Line";
+    AutoSplitKey = true;
 
     layout
     {
@@ -10,20 +11,20 @@ page 50106 "CSD Seminar Comment Sheet"
         {
             repeater(Group)
             {
-                field(Date; Date)
+                field(Date; Rec.Date)
                 {
                     ApplicationArea = All;
 
                 }
 
-                field(Code; Code)
+                field(Code; Rec.Code)
                 {
                     ApplicationArea = All;
                     Visible = false;
 
                 }
 
-                field(Comment; Comment)
+                field(Comment; Rec.Comment)
                 {
                     ApplicationArea = All;
 
@@ -50,4 +51,10 @@ page 50106 "CSD Seminar Comment Sheet"
 
     var
         myInt: Integer;
+
+    trigger OnNewRecord(BelowRec: boolean)
+    begin
+        Rec.SetupNewLline;
+
+    end;
 }

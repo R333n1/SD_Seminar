@@ -1,7 +1,7 @@
 page 50102 "CSD Seminar List"
 {
     PageType = List;
-    //ApplicationArea = All;
+    ApplicationArea = All;
     Caption = 'Seminar List';
     UsageCategory = Lists;
     CardPageId = 50101;
@@ -14,39 +14,39 @@ page 50102 "CSD Seminar List"
         {
             repeater(Group)
             {
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
-                    //ApplicationArea = All;
+                    ApplicationArea = All;
 
                 }
 
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
-                    //ApplicationArea = All;
+                    ApplicationArea = All;
 
                 }
 
-                field("Seminar Duration"; "Seminar Duration")
+                field("Seminar Duration"; Rec."Seminar Duration")
                 {
-                    //ApplicationArea = All;
+                    ApplicationArea = All;
 
                 }
 
-                field("Seminar Price"; "Seminar Price")
+                field("Seminar Price"; Rec."Seminar Price")
                 {
-                    //ApplicationArea = All;
+                    ApplicationArea = All;
 
                 }
 
-                field("Minimum Participants"; "Minimum Participants")
+                field("Minimum Participants"; Rec."Minimum Participants")
                 {
-                    //ApplicationArea = All;
+                    ApplicationArea = All;
 
                 }
 
-                field("Maximum Participants"; "Maximum Participants")
+                field("Maximum Participants"; Rec."Maximum Participants")
                 {
-                    //ApplicationArea = All;
+                    ApplicationArea = All;
 
                 }
             }
@@ -73,9 +73,9 @@ page 50102 "CSD Seminar List"
             {
                 action("Co&mments")
                 {
-                    //RunObject=page "CSD Seminar Comment Sheet";
-                    //RunPageLink = "Table Name"= const(Seminar), 
-                    //"No."=field("No.");
+                    RunObject = page "CSD Seminar Comment Sheet";
+                    RunPageLink = "Table Name" = const(Seminar),
+                        "No." = field("No.");
                     Image = Comment;
                     /*
                     Promoted = true;
@@ -86,6 +86,5 @@ page 50102 "CSD Seminar List"
             }
         }
     }
-
 
 }
