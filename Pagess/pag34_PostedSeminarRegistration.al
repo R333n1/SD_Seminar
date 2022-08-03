@@ -1,17 +1,13 @@
-page 50110 "CSD Seminar Registration"
+page 50134 "CSD Posted Seminar Reg."
 {
     // CSD1.00 - 2018-01-01 - D. E. Veloper
-    //   Chapter 6 - Lab 3-1
+    //   Chapter 7 - Lab 3
     //     - Created new page
 
-    // Chapter 7 - Lab 4-8
-    // Added Action Post
-
-
     Caption = 'Seminar Registration';
-    PageType = Card;
-    SourceTable = "CSD Seminar Reg. Header";
-    UsageCategory = tasks;
+    Editable = false;
+    PageType = Document;
+    SourceTable = "CSD Posted seminar Reg. Header";
 
     layout
     {
@@ -21,12 +17,6 @@ page 50110 "CSD Seminar Registration"
             {
                 field("No."; Rec."No.")
                 {
-                    AssistEdit = true;
-                    trigger OnAssistEdit();
-                    begin
-                        if Rec.AssistEdit(xRec) then
-                            CurrPage.UPDATE;
-                    end;
                 }
                 field("Starting Date"; Rec."Starting Date")
                 {
@@ -37,7 +27,7 @@ page 50110 "CSD Seminar Registration"
                 field("Seminar Name"; Rec."Seminar Name")
                 {
                 }
-                field("Instructor Resour ce No."; Rec."Instructor Resource No.")
+                field("Instructor Resource No."; Rec."Instructor Resource No.")
                 {
                 }
                 field("Instructor Name"; Rec."Instructor Name")
@@ -62,17 +52,14 @@ page 50110 "CSD Seminar Registration"
                 {
                 }
             }
-
-            part(SeminarRegistrationLines; "CSD Seminar Reg. Subpage")
+            part(SeminarRegistrationLines; "CSD Post Seminar Reg. Subpage")
             {
-                Caption = 'Lines';
-                SubPageLink = "Document No." = field("No.");
+                SubPageLink = "Document No." = Field("No.");
+
             }
-
-
             group("Seminar Room")
             {
-                field("Room Resour ce No."; Rec."Room Resource No.")
+                field("Room Resource No."; Rec."Room Resource No.")
                 {
                 }
                 field("Room Name"; Rec."Room Name")
@@ -112,15 +99,14 @@ page 50110 "CSD Seminar Registration"
         }
         area(factboxes)
         {
-            part("Seminar Details FactBox"; "CSD Seminar Details FactBox")
+            part("CSD Seminar Details FactBox"; 50117)
             {
-                SubPageLink = "No." = field("Seminar No.");
+                SubPageLink = "No." = Field("Seminar No.");
             }
-
-            part("Customer Details FactBox"; "Customer Details FactBox")
+            part("Customer Details FactBox"; 9084)
             {
                 Provider = SeminarRegistrationLines;
-                SubPageLink = "No." = field("Bill-to Customer No.");
+                SubPageLink = "No." = Field("Bill-to Customer No.");
             }
             systempart("Links"; Links)
             {
@@ -144,25 +130,14 @@ page 50110 "CSD Seminar Registration"
                     Image = Comment;
                     RunObject = Page 50106;
                     RunPageLink = "No." = Field("No.");
-                    RunPageView = where("Table Name" = Const("Seminar Registration Header"));
+                    RunPageView = where("Table Name" = const("Posted Seminar Reg. Header"));
                 }
                 action("&Charges")
                 {
                     Caption = '&Charges';
                     Image = Costs;
-                    RunObject = Page 50124;
+                    RunObject = Page 50139;
                     RunPageLink = "Document No." = Field("No.");
-                }
-
-                action("&Post")
-                {
-                    Caption = '&Post';
-                    Image = PostDocument;
-                    Promoted = true;
-                    PromotedIsBig = true;
-                    PromotedCategory = Process;
-                    ShortcutKey = F9;
-                    RunObject = codeunit "CSD Seminar-Post (Yes/No)";
                 }
             }
         }
