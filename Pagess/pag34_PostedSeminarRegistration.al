@@ -141,6 +141,29 @@ page 50134 "CSD Posted Seminar Reg."
                 }
             }
         }
+
+
+        // Chapter 8 - Lab 2 - 4
+        // Added Action Navigate
+
+        area(Processing)
+        {
+            action("&Navigate")
+            {
+                Caption = '&Navigate';
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+                trigger OnAction();
+                var
+                    Navigate: Page Navigate;
+                begin
+                    Navigate.SetDoc(Rec."Posting Date", Rec."No.");
+                    Navigate.Run();
+
+                end;
+            }
+        }
     }
 }
 
