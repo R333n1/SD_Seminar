@@ -42,11 +42,11 @@ page 50122 "CSD Seminar Registers"
         {
             systempart("Links"; Links)
             {
-
+                ApplicationArea = all;
             }
             systempart("Notes"; Notes)
             {
-
+                ApplicationArea = all;
             }
         }
     }
@@ -64,7 +64,4 @@ page 50122 "CSD Seminar Registers"
             }
         }
     }
-
-    var
-        myInt: Integer;
 }

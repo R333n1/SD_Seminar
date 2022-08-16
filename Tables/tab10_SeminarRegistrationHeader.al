@@ -80,8 +80,7 @@ table 50110 "CSD Seminar Reg. Header"
         field(6; "Instructor Name"; Text[100])
         {
             Caption = 'Instructor Name';
-            CalcFormula = Lookup(Resource.Name where("No." = Field("Instructor Resource No."),
-                                                      Type = CONST(Person)));
+            CalcFormula = Lookup(Resource.Name where("No." = Field("Instructor Resource No."), Type = CONST(Person)));
             Editable = false;
             FieldClass = FlowField;
         }
@@ -283,6 +282,15 @@ table 50110 "CSD Seminar Reg. Header"
         field(28; "Posting No."; Code[20])
         {
             Caption = 'Posting No.';
+        }
+
+
+        // Chapter 9 - Lab 1-1
+        // - Added new field "No. Printed
+        field(40; "No. Printed"; Integer)
+        {
+            Caption = 'No. Printed';
+            Editable = false;
         }
 
     }

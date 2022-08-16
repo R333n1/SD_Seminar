@@ -3,7 +3,9 @@ page 50107 "CSD Seminar Comment List"
     PageType = List;
     Caption = 'Seminar Comment List';
     Editable = false;
+    UsageCategory = Lists;
     SourceTable = "CSD Seminar Comment Line";
+    ApplicationArea = all;
 
     layout
     {
@@ -33,22 +35,5 @@ page 50107 "CSD Seminar Comment List"
         }
     }
 
-    actions
-    {
-        area(Processing)
-        {
-            action(ActionName)
-            {
-                ApplicationArea = All;
 
-                trigger OnAction()
-                begin
-
-                end;
-            }
-        }
-    }
-
-    var
-        myInt: Integer;
 }

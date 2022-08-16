@@ -56,11 +56,11 @@ page 50102 "CSD Seminar List"
         {
             systempart("Links"; Links)
             {
-
+                ApplicationArea = all;
             }
             systempart("Notes"; Notes)
             {
-
+                ApplicationArea = all;
             }
         }
     }
@@ -80,6 +80,7 @@ page 50102 "CSD Seminar List"
                     Promoted = true;
                     PromotedIsBig = true;
                     PromotedOnly = true;
+                    ApplicationArea = all;
 
                 }
                 //>> Lab 8-2
@@ -92,6 +93,7 @@ page 50102 "CSD Seminar List"
                     PromotedCategory = Process;
                     ShortcutKey = "Ctrl+F7";
                     Image = WarrantyLedger;
+                    ApplicationArea = all;
                 }
                 action("&Registrations")
                 {
@@ -101,6 +103,7 @@ page 50102 "CSD Seminar List"
                     Image = Timesheet;
                     Promoted = true;
                     PromotedCategory = Process;
+                    ApplicationArea = all;
                 }
                 //>> Lab 8-2
             }
@@ -116,6 +119,7 @@ page 50102 "CSD Seminar List"
                 Image = NewTimesheet;
                 Promoted = true;
                 PromotedCategory = New;
+                ApplicationArea = all;
             }
         }
         //>> Lab 8-2

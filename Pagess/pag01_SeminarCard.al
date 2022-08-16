@@ -93,11 +93,11 @@ page 50101 "CSD Seminar Card"
         {
             systempart("Links"; Links)
             {
-
+                ApplicationArea = all;
             }
             systempart("Notes"; Notes)
             {
-
+                ApplicationArea = all;
             }
         }
     }
@@ -117,6 +117,7 @@ page 50101 "CSD Seminar Card"
                     Promoted = true;
                     PromotedIsBig = true;
                     PromotedOnly = true;
+                    ApplicationArea = all;
                 }
 
                 //>> Lab 8 1-2
@@ -129,6 +130,7 @@ page 50101 "CSD Seminar Card"
                     PromotedCategory = Process;
                     ShortcutKey = "Ctrl+F7";
                     Image = WarrantyLedger;
+                    ApplicationArea = all;
                 }
                 //>> Lab 8 1-1
 
@@ -141,6 +143,7 @@ page 50101 "CSD Seminar Card"
                     Image = Timesheet;
                     Promoted = true;
                     PromotedCategory = Process;
+                    ApplicationArea = all;
                 }
                 //>> Lab 8 1-2
 
@@ -159,6 +162,7 @@ page 50101 "CSD Seminar Card"
                 Image = NewTimesheet;
                 Promoted = true;
                 PromotedCategory = New;
+                ApplicationArea = all;
             }
         }
         //>> Lab 8 1-2

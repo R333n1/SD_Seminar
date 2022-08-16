@@ -9,17 +9,10 @@ pageextension 50103 "CSD SourceCodeSetupExt" extends "Source Code Setup"
                 Caption = 'Seminar';
                 field(Seminar; Rec."CSD Seminar")
                 {
-
+                    ApplicationArea = all;
                 }
             }
         }
     }
 
-    actions
-    {
-        // Add changes to page actions here
-    }
-
-    var
-        myInt: Integer;
 }

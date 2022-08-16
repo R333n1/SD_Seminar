@@ -103,11 +103,11 @@ page 50121 "CSD Seminar Ledger Entries"
         {
             systempart("Links"; Links)
             {
-
+                ApplicationArea = all;
             }
             systempart("Notes"; Notes)
             {
-
+                ApplicationArea = all;
             }
         }
 
@@ -120,23 +120,24 @@ page 50121 "CSD Seminar Ledger Entries"
 
 
 
-
-    actions
-    {
-        area(Processing)
+    /*
+        actions
         {
-            action(ActionName)
+            area(Processing)
             {
-                ApplicationArea = All;
+                action(ActionName)
+                {
+                    ApplicationArea = All;
 
-                trigger OnAction()
-                begin
+                    trigger OnAction()
+                    begin
 
-                end;
+                    end;
+                }
             }
         }
-    }
 
-    var
-        myInt: Integer;
+        var
+            myInt: Integer;
+            */
 }

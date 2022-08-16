@@ -22,6 +22,7 @@ table 50100 "CSD Seminar Setup"
         {
             Caption = 'Seminar Registration Nos.';
             TableRelation = "No. Series";
+
         }
 
         field(40; "Posted Seminar Reg. Nos."; Code[20])

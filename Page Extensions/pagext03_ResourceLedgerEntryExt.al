@@ -8,11 +8,11 @@ pageextension 50104 "CSD ResourceLedgerEntryExt" extends "Resource Ledger Entrie
         {
             field("Seminar No."; Rec."CSD Seminar No.")
             {
-
+                ApplicationArea = all;
             }
             field("Seminar Registration No."; Rec."CSD Seminar Registration No.")
             {
-
+                ApplicationArea = all;
             }
 
 

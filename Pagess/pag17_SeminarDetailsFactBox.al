@@ -14,21 +14,27 @@ page 50117 "CSD Seminar Details FactBox"
         {
             field("No."; Rec."No.")
             {
+                ApplicationArea = all;
             }
             field(Name; Rec.Name)
             {
+                ApplicationArea = all;
             }
             field("Seminar Duration"; Rec."Seminar Duration")
             {
+                ApplicationArea = all;
             }
             field("Minimum Participants"; Rec."Minimum Participants")
             {
+                ApplicationArea = all;
             }
             field("Maximum Participants"; Rec."Maximum Participants")
             {
+                ApplicationArea = all;
             }
             field("Seminar Price"; Rec."Seminar Price")
             {
+                ApplicationArea = all;
             }
         }
     }

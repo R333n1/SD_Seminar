@@ -12,6 +12,7 @@ page 50113 "CSD Seminar Registration List"
     CardPageID = "CSD Seminar Registration";
     Editable = false;
     PageType = List;
+    ApplicationArea = all;
     SourceTable = "CSD Seminar Reg. Header";
     UsageCategory = lists;
 
@@ -23,27 +24,35 @@ page 50113 "CSD Seminar Registration List"
             {
                 field("No."; Rec."No.")
                 {
+                    ApplicationArea = all;
                 }
                 field("Starting Date"; Rec."Starting Date")
                 {
+                    ApplicationArea = all;
                 }
                 field("Seminar No."; Rec."Seminar No.")
                 {
+                    ApplicationArea = all;
                 }
                 field("Seminar Name"; Rec."Seminar Name")
                 {
+                    ApplicationArea = all;
                 }
                 field(Status; Rec.Status)
                 {
+                    ApplicationArea = all;
                 }
                 field(Duration; Rec.Duration)
                 {
+                    ApplicationArea = all;
                 }
                 field("Maximum Participants"; Rec."Maximum Participants")
                 {
+                    ApplicationArea = all;
                 }
                 field("Room Resource No."; Rec."Room Resource No.")
                 {
+                    ApplicationArea = all;
                 }
             }
         }
@@ -51,9 +60,11 @@ page 50113 "CSD Seminar Registration List"
         {
             systempart("Links"; Links)
             {
+                ApplicationArea = all;
             }
             systempart("Notes"; Notes)
             {
+                ApplicationArea = all;
             }
         }
     }
@@ -67,6 +78,7 @@ page 50113 "CSD Seminar Registration List"
                 Caption = '&Seminar Registration';
                 action("Co&mments")
                 {
+                    ApplicationArea = all;
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page 50106;
@@ -75,6 +87,7 @@ page 50113 "CSD Seminar Registration List"
                 }
                 action("&Charges")
                 {
+                    ApplicationArea = all;
                     Caption = '&Charges';
                     Image = Costs;
                     RunObject = Page 50124;
@@ -83,6 +96,7 @@ page 50113 "CSD Seminar Registration List"
 
                 action("&Post")
                 {
+                    ApplicationArea = all;
                     Caption = '&Post';
                     Image = PostDocument;
                     Promoted = true;
@@ -90,6 +104,22 @@ page 50113 "CSD Seminar Registration List"
                     PromotedCategory = Process;
                     ShortcutKey = F9;
                     RunObject = codeunit "CSD Seminar-Post (Yes/No)";
+                }
+
+                action("&Print")
+                {
+                    ApplicationArea = All;
+                    Image = Print;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    PromotedCategory = Process;
+
+                    trigger OnAction();
+                    var
+                        SeminarReportSelection: Record "CSD Seminar Report Selections";
+                    begin
+                        SeminarReportSelection.PrintReportSelection(SeminarReportSelection.Usage::Registration, Rec);
+                    end;
                 }
             }
         }
