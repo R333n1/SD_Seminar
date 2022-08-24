@@ -114,30 +114,4 @@ page 50121 "CSD Seminar Ledger Entries"
 
     }
 
-
-
-
-
-
-
-    /*
-        actions
-        {
-            area(Processing)
-            {
-                action(ActionName)
-                {
-                    ApplicationArea = All;
-
-                    trigger OnAction()
-                    begin
-
-                    end;
-                }
-            }
-        }
-
-        var
-            myInt: Integer;
-            */
 }

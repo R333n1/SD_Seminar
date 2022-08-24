@@ -33,22 +33,6 @@ page 50106 "CSD Seminar Comment Sheet"
         }
     }
 
-    actions
-    {
-        area(Processing)
-        {
-            action(ActionName)
-            {
-                ApplicationArea = All;
-
-                trigger OnAction()
-                begin
-
-                end;
-            }
-        }
-    }
-
     var
         myInt: Integer;
 

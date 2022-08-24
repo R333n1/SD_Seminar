@@ -33,7 +33,7 @@ page 50100 "CSD Seminar Setup"
     }
 
 
-
+    ///////// insert a new record, if there is not a record
     trigger OnOpenPage();
     begin
         if not Rec.get then begin

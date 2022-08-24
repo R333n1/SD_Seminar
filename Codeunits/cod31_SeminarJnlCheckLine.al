@@ -70,5 +70,6 @@ codeunit 50131 "CSD Seminar Jnl.-Check Line"
                 SemJnlLine.FIELDERROR("Document Date", PostingDateTxt);
 
 
+
     end;
 }

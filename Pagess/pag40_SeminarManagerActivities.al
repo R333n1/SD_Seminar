@@ -3,7 +3,7 @@ page 50140 "CSD Seminar Manager Activities"
 // Chapter 10 - Lab 1 - 2
 // - Created new page
 {
-    PageType = CardPart;
+    PageType = ListPart;
     ApplicationArea = All;
     UsageCategory = Administration;
     Caption = 'Seminar Manager Activities';
@@ -27,7 +27,6 @@ page 50140 "CSD Seminar Manager Activities"
                 {
                     ApplicationArea = All;
                     Caption = 'Registered';
-
                 }
 
                 actions
@@ -41,12 +40,24 @@ page 50140 "CSD Seminar Manager Activities"
                     }
                 }
             }
+
             cuegroup("For Posting")
             {
                 Caption = 'For Posting';
                 field(Closed; Rec.Closed)
                 {
                     Caption = 'Closed';
+                    ApplicationArea = All;
+                }
+            }
+
+            ////////////////////////////////////////////
+            cuegroup("Posted Closedd")
+            {
+                Caption = 'Posted';
+                field("Posted Closed"; Rec."Posted Closed")
+                {
+                    Caption = 'Posted';
                     ApplicationArea = All;
                 }
             }

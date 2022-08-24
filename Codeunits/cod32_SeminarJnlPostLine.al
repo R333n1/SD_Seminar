@@ -13,6 +13,9 @@ codeunit 50132 "CSD Seminar Jnl.-Post Line"
         SeminarRegister: Record "CSD Seminar Register";
         SeminarJnlCheckLine: Codeunit "CSD Seminar Jnl.-Check Line";
         NextEntryNo: Integer;
+        SeminarRegHeader2: Record "CSD Seminar Reg. Header";
+        SeminarRegLine2: Record "CSD Seminar Registration Line";
+
 
     procedure RunWithCheck(var SeminarJnlLine2: Record "CSD Seminar Journal Line");
     var
@@ -27,6 +30,8 @@ codeunit 50132 "CSD Seminar Jnl.-Post Line"
     var
         myInt: Integer;
     begin
+
+
 
         if NextEntryNo = 0 then begin
             SeminarLedgerEntry.LockTable;
